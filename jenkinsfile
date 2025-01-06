@@ -21,6 +21,7 @@ pipeline {
                         sh 'docker build -t m0hamedemam/demo-app:jma-2.0 .'
                         sh "echo $PASS | docker login -u $USER --password-stdin"
                         sh 'docker push m0hamedemam/demo-app:jma-2.0'
+                        sh 'docker buildx build -t m0hamedemam/demo-app:jma-2.0 .'
                     }
                 }
             }
